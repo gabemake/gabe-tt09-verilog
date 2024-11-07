@@ -99,11 +99,11 @@ module tt_um_example (
             end //dig3
           end//dig4
         end //counter_ms
-      end else if (current_state == SCORE1 or current_state == OVER1 or 
-                  current_state == SCORE2 or current_state == OVER2 or 
-                  current_state == SCORE3 or current_state == OVER3 or 
-                  current_state == SCORE4 or current_state == OVER4 or 
-                  current_state == SCOREB or current_state == OVERB) begin
+      end else if (current_state == SCORE1 || current_state == OVER1 || 
+                  current_state == SCORE2 || current_state == OVER2 || 
+                  current_state == SCORE3 || current_state == OVER3 || 
+                  current_state == SCORE4 || current_state == OVER4 || 
+                  current_state == SCOREB || current_state == OVERB) begin
         if (counter_ms > 0) begin
           counter_ms -= 1;
         end else begin
