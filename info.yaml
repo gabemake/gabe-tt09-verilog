@@ -1,11 +1,11 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  title:        "Gabe's Reaction Game"      # Project title
+  author:       "Gabe"      # Your name
+  discord:      "gabe.foo"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A game of reaction speed and skill"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     1000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -17,29 +17,30 @@ project:
   # Source files must be in ./src and you must list each source file separately, one per line.
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
+    - "parameters.vh"
     - "project.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: ""
+  ui[0]: "Game start/trigger"
   ui[1]: ""
   ui[2]: ""
   ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[4]: "Starting seconds (LSB)"
+  ui[5]: "Starting seconds"
+  ui[6]: "Starting seconds"
+  ui[7]: "Starting seconds (MSB)"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "LED_A"
+  uo[1]: "LED_B"
+  uo[2]: "LED_C"
+  uo[3]: "LED_D"
+  uo[4]: "LED_E"
+  uo[5]: "LED_F"
+  uo[6]: "LED_G"
+  uo[7]: "LED_."
 
   # Bidirectional pins
   uio[0]: ""
