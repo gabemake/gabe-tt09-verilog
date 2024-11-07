@@ -94,26 +94,26 @@ module tt_um_example (
                 end else begin
                   // if dig1 reaches 0, it's game over (yeah I know it's a second behind)
                   over = 1;
-                end
-              end
-            end
-          end
-        end else if (current_state == SCORE1 or current_state == OVER1 or 
-                     current_state == SCORE2 or current_state == OVER2 or 
-                     current_state == SCORE3 or current_state == OVER3 or 
-                     current_state == SCORE4 or current_state == OVER4 or 
-                     current_state == SCOREB or current_state == OVERB) begin
-          if (counter_ms > 0) begin
-            counter_ms -= 1;
-          end else begin
-            counter_ms = 10000000;
-            // count down a full second per OVER/SCORE character
-          end
-      end
-    end
+                end //dig1
+              end //dig2
+            end //dig3
+          end//dig4
+        end //counter_ms
+      end else if (current_state == SCORE1 or current_state == OVER1 or 
+                  current_state == SCORE2 or current_state == OVER2 or 
+                  current_state == SCORE3 or current_state == OVER3 or 
+                  current_state == SCORE4 or current_state == OVER4 or 
+                  current_state == SCOREB or current_state == OVERB) begin
+        if (counter_ms > 0) begin
+          counter_ms -= 1;
+        end else begin
+          counter_ms = 10000000;
+       // count down a full second per OVER/SCORE character
+        end
+      end //state if
       
-        
-  end
+    end // reset
+  end // always block
 
   always_comb begin
       case (current_state)
