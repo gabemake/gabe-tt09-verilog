@@ -23,7 +23,7 @@ module tt_um_example (
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, uio_in, 1'b0};
+    wire _unused = &{ena, uio_in[7:0], ui_in[1:3], 1'b0};
 
   // countdown
   //typedef enum states { IDLE, COUNTING, SCORE1, SCORE2, SCORE3, SCORE4, SCOREB, OVER1, OVER2, OVER3, OVER4, OVERB} states_t;
@@ -55,7 +55,12 @@ module tt_um_example (
       over = 0;
       current_state = next_state;
       if (current_state == IDLE) begin
-        counter_ms = 1000
+          
+        counter_ms = 1000;
+        counter_dig1 = ui_in[4:7];
+        counter_dig2 = 9;
+        counter_dig3 = 9;
+        counter_dig4 = 9;
       end else if (current_state == COUNTING) begin
         if (counter_ms > 0) begin
           counter_ms -= 1;
